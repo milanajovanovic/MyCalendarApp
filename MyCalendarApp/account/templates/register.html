@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h1 class="login-heading mb-4">Moj kalendar</h1>
+                <h3 class="login-heading mb-4">Registracija</h3>
+              <form method="post"> {% csrf_token %}
+                <div class="form-label-group">
+                  {% render_field form.email class="form-control" %}
+                  <label for="id_email">E-Mail adresa</label>
+                  {{ form.email.errors }}
+                </div>
+                <div class="form-label-group">
+                  {% render_field form.nick_name class="form-control" %}
+                  <label for="id_nick_name">Korisničko ime</label>
+                  {{ form.nick_name.errors }}
+                </div>
+
+                <div class="form-label-group">
+                  {% render_field form.password1 class="form-control" %}
+                  <label for="id_password1">Lozinka</label>
+                  {{ form.password1.errors }}
+                </div>
+                  <div class="form-label-group">
+                  {% render_field form.password2 class="form-control" %}
+                  <label for="id_password2">Potvrdite lozinku</label>
+                  {{ form.password2.errors }}
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Registracija</button>
+              </form>
+                <p style="margin-top: 128px;">
+                <small>
+                    Photo by <a href="https://unsplash.com/@maddibazzocco">Maddi Bazzocco</a> on <a href="https://unsplash.com/s/photos/calendar-2023">Unsplash</a>
+                </small>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
