@@ -109,7 +109,6 @@ class EventEditForm(forms.ModelForm):
         event.start_date = self.cleaned_data["start_date"]
         event.end_date = self.cleaned_data["end_date"]
         event.event_type = self.cleaned_data["event_type"]
-
         if commit:
             event.save()
 

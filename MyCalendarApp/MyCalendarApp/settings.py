@@ -24,7 +24,7 @@ SECRET_KEY = '4zts%mt449z66pm3j%1@7+5jhgso^4=-b=i0bd2x7-1%*nq11)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
